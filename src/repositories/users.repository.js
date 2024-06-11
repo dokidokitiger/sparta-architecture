@@ -1,10 +1,10 @@
-import { Prisma } from '../utils/prisma.util.js';
+import { prisma } from '../utils/prisma.util.js';
 
 export class UsersRepository{
-    findMe = async() => {
+    findMe = async(id) => {
         const user = await prisma.user.findUnique({
             where : {
-                id: parseInt(user.id)
+                id: parseInt(id)
             }
         });
         return user;

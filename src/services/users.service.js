@@ -3,10 +3,9 @@ import {UsersRepository} from '../repositories/users.repository.js';
 export class UsersService {
     UsersRepository = new UsersRepository();
 
-    findMe = async() => {
-        const user = await this.UsersRepository.findMe();
+    findMe = async(id) => {
+        const user = await this.UsersRepository.findMe(id);
 
-        return user.map((user)=> {
             return {
                 id: user.id,
                 email: user.email,
@@ -15,6 +14,5 @@ export class UsersService {
                 createdAt: user.createdAt,
                 updatedAt: user.updatedAt,
             }
-        });
     }
 }
