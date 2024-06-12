@@ -7,4 +7,4 @@ const usersRouter = express.Router();
 const usersController = new UsersController();
 usersRouter.get('/me', requireAccessToken, usersController.getUser);
 
-export { usersRouter };
+export { usersRouter }; 
