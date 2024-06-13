@@ -1,5 +1,4 @@
 import {ResumesRepository} from '../repositories/resumes.repository.js';
-import { authRouter } from '../routers/auth.router.js';
 
 export class ResumesService{
     resumesRepository = new ResumesRepository();

@@ -1,4 +1,3 @@
-import { authRouter } from '../routers/auth.router.js';
 import { prisma } from '../utils/prisma.util.js';
 
 export class ResumesRepository {
