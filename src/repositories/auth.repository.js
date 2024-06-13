@@ -27,14 +27,6 @@ export class AuthRepository{
         const hashedPassword = await bcrypt.hash(password, HASH_SALT_ROUNDS);
         return hashedPassword;
     }
-    findPassword = async(password) => {
-        const userPassword = await prisma.user.findFirst({
-            where: {
-                password
-            }
-        });
-        return userPassword;
-    }
     findId = async(email) => {
         const user = await prisma.user.findUnique({
             where: {
@@ -43,5 +35,12 @@ export class AuthRepository{
         });
         const payload = {id: parseInt(user.id)};
         return payload;
+    }
+    findPayloadId = async(id) => {
+        const user = await prisma.user.findUnique({
+            where: {id},
+            omit: {password: true},
+        });
+        return user;
     }
 }

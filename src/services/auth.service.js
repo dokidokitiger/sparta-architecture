@@ -38,13 +38,4 @@ export class AuthService{
         return isPasswordMatched;
     }
 
-    // jsonwebToken = async(payload, ACCESS_TOKEN_SECRET, {
-    //     expiresIn: ACCESS_TOKEN_EXPIRES_IN,
-    //   }) => {
-    //     const accessToken = jwt.sign(payload, ACCESS_TOKEN_SECRET, {
-    //         expiresIn: ACCESS_TOKEN_EXPIRES_IN,
-    //       });
-      
-    // }
-
 }
